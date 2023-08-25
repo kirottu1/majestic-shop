@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body {
+  width: 74%;
+  display: block;
+  margin: 0 auto !important;
+}
+
+header {
+  margin-bottom: 4rem;
+}
+header hr {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.main-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.navbar-right-logo {
+  font-weight: 100;
+  font-size: 17px !important;
+}
+
+.menu-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu-list li a {
+  color: black;
+}
+
+.main-page-description {
+  margin-top: 100px;
+  max-width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.description-block {
+  max-width: 48%;
+  display: inline-block;
+}
+.description-block h1 {
+  font-size: 70px;
+  font-weight: 300;
+  padding-bottom: 50px;
+}
+.description-block p {
+  font-weight: 200;
+  font-size: 19px;
+  letter-spacing: 0.025rem;
+  line-height: 2.5rem;
+}
+.description-block a {
+  margin-top: 2rem;
+  padding: 16px 66px;
+  font-size: 12px;
+  line-height: 24px;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 3px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  transition: 0.33s all ease;
+  white-space: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-outline-primary {
+  color: #403bf4 !important;
+  border-color: #403bf4 !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #403bf4 !important;
+}
+
+.btn-outline-success {
+  border-color: #bdcb42 !important;
+  color: #bdcb42 !important;
+  margin-left: 5px;
+}
+
+.btn-outline-success:hover {
+  color: #fff !important;
+  background-color: #bdcb42 !important;
+}
+
+.description-picture {
+  max-width: 57%;
+  display: inline-block;
+  vertical-align: top;
+}
+.description-picture img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.main-page-gallery {
+  margin-top: 150px;
+}
+.main-page-gallery h5 {
+  margin-top: 50px;
+  font-size: 24px;
+  line-height: 1.54167;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+.main-page-gallery img {
+  margin-bottom: 30px;
+}
+.main-page-gallery hr {
+  margin-bottom: 30px;
+}
+.main-page-gallery p {
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.88889;
+  color: #343a40;
+}
+
+.price {
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+.design-further-info {
+  padding: 16px 40px !important;
+  font-size: 12px;
+  line-height: 24px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.gallery-block {
+  padding-bottom: 40px;
+}
+
+/*# sourceMappingURL=main.css.map */
