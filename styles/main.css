@@ -276,6 +276,16 @@ footer {
 }
 .faq-block .card-body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.88889;
+  color: #343a40;
+}
+.faq-block .btn-link:hover {
+  text-decoration: none;
+}
+.faq-block .btn-link:focus {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=main.css.map */
