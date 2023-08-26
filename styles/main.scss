@@ -39,7 +39,7 @@ header{
   display: flex;
 }
 .description-block{
-  max-width: 48%;
+  max-width: 37%;
   display: inline-block;
   h1{
     font-size: 70px;
@@ -89,7 +89,7 @@ header{
   background-color: #bdcb42!important;
 }
 .description-picture{
-  max-width: 57%;
+  max-width: 55%;
   display: inline-block;
   vertical-align: top;
   img{
@@ -166,4 +166,102 @@ footer{
   width: 74%;
   display: block;
   margin: 0 auto!important;
+}
+
+/// bonus-page css
+
+.bonus-page-description{
+  margin-top: 200px;
+  .description-picture{
+    max-width: 47%;
+  }
+  .description-block{
+    max-width: 42%;
+  }
+}
+.discount-card{
+  .card{
+    border: none;
+  }
+}
+
+.card-block{
+  hr{
+    margin-bottom: 40px;
+  }
+  p:nth-child(2){
+    font-size: 40px;
+    font-weight: 100;
+    color: #403bf4;
+  }
+  p:nth-child(4){
+    font-size: 24px;
+    line-height: 1.54167
+  }
+  p:nth-child(5){
+    font-size: 19px;
+  }
+}
+.bonus-page-footer{
+  margin-top: 100px;
+}
+
+/// news page css
+
+.news-cards{
+  column-count: 1!important;
+  .card{
+    border: none;
+    border-bottom: 1px solid #ececee;
+    padding-bottom: 40px;
+    margin-top: 70px;
+    .card-footer{
+      background-color: transparent;
+      border-top: none;
+      padding: 0;
+    }
+  }
+  h5{
+    font-size: 30px;
+    line-height: 1.43333;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  img{
+    margin-bottom: 40px;
+  }
+  p{
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.88889;
+    color: #343a40;
+  }
+}
+.news-block{
+  max-width: 65%;
+  display: block;
+  margin: 0 auto;
+}
+
+/// faq page css
+
+.faq-block{
+  margin-top: 6rem;
+  .card{
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+  }
+  .card-header{
+    border: none;
+    background-color: transparent;
+    button{
+      font-size: 24px;
+      line-height: 1.54167;
+      color: #151515;
+      font-weight: 300;
+    }
+  }
+  .card-body{
+    border-bottom: 1px solid rgba(0,0,0,.125);
+  }
 }
