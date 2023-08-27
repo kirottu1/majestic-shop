@@ -288,4 +288,52 @@ footer {
   text-decoration: none;
 }
 
+.shoe-custom-blocks {
+  max-width: 100%;
+  margin-bottom: 200px;
+}
+
+.shoe-custom-bottom-blocks h3 {
+  font-weight: 200;
+  color: #151515;
+  font-size: 40px;
+  line-height: 1.35;
+  padding-top: 29px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ececee;
+  margin-bottom: 20px;
+}
+.shoe-custom-bottom-blocks a {
+  margin-top: 0;
+  padding: 0;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 3px;
+  white-space: initial;
+  text-transform: initial;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: 300;
+  letter-spacing: 0.025rem;
+  line-height: 2.5rem;
+}
+.shoe-custom-bottom-blocks a:hover {
+  text-decoration: none;
+}
+
+.clothing-custom-blocks {
+  max-width: 100%;
+  margin-bottom: 200px;
+}
+.clothing-custom-blocks a {
+  border-color: #bdcb42 !important;
+  color: #bdcb42 !important;
+}
+.clothing-custom-blocks a:hover {
+  border-color: #bdcb42 !important;
+  background-color: #bdcb42 !important;
+}
+
 /*# sourceMappingURL=main.css.map */
