@@ -336,4 +336,75 @@ footer {
   background-color: #bdcb42 !important;
 }
 
+.price-tag {
+  font-weight: 100 !important;
+}
+
+.shoe-certificate-page h3 {
+  border-bottom: none;
+}
+.shoe-certificate-page p:nth-child(2) {
+  border-bottom: 1px solid #ececee;
+  padding-bottom: 40px;
+}
+.shoe-certificate-page p:nth-child(3) {
+  margin-top: 40px;
+}
+
+.contact-form-block {
+  margin-top: 185px;
+  text-align: center;
+}
+
+.certificate-form {
+  max-width: 60%;
+  margin: 0 auto;
+}
+.certificate-form h3 {
+  font-size: 40px;
+  line-height: 1.35;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.certificate-form p {
+  margin-bottom: 50px;
+}
+.certificate-form input {
+  min-height: 60px;
+  padding: 17px 19px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #888;
+  background-color: #f8f8f8;
+}
+.certificate-form textarea {
+  min-height: 60px;
+  padding: 17px 19px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #888;
+  background-color: #f8f8f8;
+  max-height: 350px;
+}
+.certificate-form button {
+  margin-top: 35px;
+  padding: 16px 40px;
+  font-size: 12px;
+  line-height: 24px;
+  transition: 0.33s all ease;
+}
+.certificate-form .form-control:focus {
+  box-shadow: none;
+}
+.certificate-form .btn-outline-primary {
+  color: #403bf4 !important;
+  border-color: #403bf4 !important;
+}
+.certificate-form .btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #403bf4 !important;
+}
+
 /*# sourceMappingURL=main.css.map */
