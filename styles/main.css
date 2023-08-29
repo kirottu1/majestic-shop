@@ -407,4 +407,17 @@ footer {
   background-color: #403bf4 !important;
 }
 
+.stock-block {
+  display: flex;
+  margin-top: 100px;
+}
+.stock-block .card-columns {
+  max-width: 75%;
+}
+
+.stock-filter {
+  max-width: 25%;
+  width: 19%;
+}
+
 /*# sourceMappingURL=main.css.map */

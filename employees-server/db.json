@@ -1,0 +1,127 @@
+{
+  "stock": [
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Grand Theft Auto V",
+      "price": "100 GBP",
+      "id": "392",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/392/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Bleach Ichigo vs Zaraki",
+      "price": "50 GBP",
+      "id": "391",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/391/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "KonoSuba",
+      "price": "50 GBP",
+      "id": "389",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/389/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Spider Man",
+      "price": "100 GBP",
+      "id": "388",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/388/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Epic Race",
+      "price": "100 GBP",
+      "id": "387",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/387/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Crypto Hasbulla",
+      "price": "100 GBP",
+      "id": "385",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/385/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Crypto BAYC",
+      "price": "100 GBP",
+      "id": "382",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/382/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Breaking Bad",
+      "price": "100 GBP",
+      "id": "379",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/379/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Japan Wave",
+      "price": "100 GBP",
+      "id": "368",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/368/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Demon Slayer Manga",
+      "price": "100 GBP",
+      "id": "367",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/367/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Roronoa zoro",
+      "price": "100 GBP",
+      "id": "366",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/366/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Nike Air Force 1",
+      "design": "Thought",
+      "price": "100 GBP",
+      "id": "365",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/365/small/shoe.jpg"
+    }
+  ],
+  "users": [
+    {
+      "type": "user",
+      "login": "",
+      "password": "",
+      "email": "",
+      "name": "",
+      "phone": ""
+    },
+    {
+      "type": "admin",
+      "login": "",
+      "password": ""
+    }
+  ]
+}

@@ -401,3 +401,18 @@ footer{
     background-color: #403bf4!important;
   }
 }
+
+/// shoe stock css
+
+.stock-block{
+  display: flex;
+  margin-top: 100px;
+  .card-columns{
+    max-width: 75%;
+  }
+}
+.stock-filter{
+  max-width: 25%;
+  //padding-right: 100px;
+  width: 19%;
+}

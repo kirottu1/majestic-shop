@@ -1,0 +1,82 @@
+/****** Bootstrap Colors ******/
+.primary {
+    min-height: 800px;
+}
+/*** Accordion Toggles ***/
+.panel-heading {
+    position: relative;
+}
+/*** Filter Menu ***/
+/* Panels */
+.filter-menu .panel {
+    border-radius: 0;
+    border: 1px solid #eeeeee;
+}
+.filter-menu .panel-heading {
+    background: #fff;
+    padding: 0;
+}
+.filter-menu .panel-body {
+    padding: 16px;
+}
+/* Inner Panels */
+.filter-menu .panel-group {
+    margin: -16px;
+}
+
+.filter-menu .panel-group .panel + .panel {
+    margin-top: 0;
+}
+/*** Filter Menu - Mobile ***/
+/* Panels - Mobile */
+.filter-menu.mobile .btn-link {
+    color: #f9f9f9;
+}
+.filter-menu.mobile hr {
+    margin-top: 0;
+    border-top-color: #4B6473;
+}
+.filter-menu.mobile .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border-color: #4B6473;
+}
+.filter-menu.mobile .panel {
+    border-color: #4B6473;
+    background: #30404a;
+    color: #f9f9f9;
+}
+.filter-menu.mobile .panel-heading {
+    background: #30404a;
+}
+
+.filter-menu.mobile .panel-group .panel {
+    border-color: #4B6473;
+}
+
+
+/*----------------------------------------------------------------*/
+
+.stock-filter .row{
+    display: block;
+}
+.stock-filter .row label{
+    font-size: 14px;
+    line-height: 1.71429
+}
+.stock-filter .row input{
+    margin-right: 3px;
+}
+
+.accordion-toggle{
+    font-size: 24px;
+    line-height: 1.54167;
+    font-weight: 300;
+    color: #151515;
+}
+.accordion-toggle:hover{
+    color: #151515;
+    text-decoration: none;
+    cursor: unset;
+}
+.filter-body{
+    padding-left: 2px!important;
+}
