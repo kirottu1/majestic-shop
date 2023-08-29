@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/catalogue.css">
-    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script defer src="./scripts/jquery.js"></script>
-    <script defer src="./scripts/jqueryUI.js"></script>
+<!--    <script defer src="./scripts/jquery.js"></script>-->
+<!--    <script defer src="./scripts/jqueryUI.js"></script>-->
     <script defer src="./scripts/API.js"></script>
     <script defer src="./scripts/stock.js"></script>
     <script defer src="./scripts/main.js"></script>
+    <script>
+        $( function() {
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 300,
+                values: [ 75, 300 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( "£" + ui.values[ 0 ] + " - £" + ui.values[ 1 ] );
+                }
+            });
+            $( "#amount" ).val( "£" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - £" + $( "#slider-range" ).slider( "values", 1 ) );
+        } );
+    </script>
 </head>
 <body>
 <div class="body-block">
@@ -87,7 +105,7 @@
                         <div class="col-xs-6">
                             <div class="filter-menu">
                                 <form>
-                                    <div class="">
+                                    <div>
                                         <div class="panel-body">
                                             <div class="panel-group" id="filter-menu" role="tablist" aria-multiselectable="true">
                                                 <div class="">
@@ -111,33 +129,58 @@
                                                     </div><!-- /.panel-collapse -->
                                                 </div><!-- /.panel -->
 
-                                                <div class="">
+                                                <div>
                                                     <div class="panel-heading" role="tab" id="headingTwo">
                                                         <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                            Topic
+                                                            Model
                                                         </a><!-- /.panel-title -->
                                                     </div><!-- /.panel-heading -->
                                                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                                         <div class="panel-body filter-body">
-                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Politics</label></div>
-                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Religion</label></div>
-                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Music</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Adidas Yeezy Boost 350 v2</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Adidas Originals ZX700</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Adidas Stan Smith</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Adidas Superstar</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Converse All Star</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Crocs LiteRide</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Fila Disruptor</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Jordan Air 1</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Jordan Air 1 MID</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Lacoste WILDCARD 120 1 SMA</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Nike Air Force</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Nike Air Force 1</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Nike Air Force 1 MID</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Nike Air Force 1 Shadow</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Nike Air Jordan</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Nike Air Max 90</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Nike Air Monarch</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Nike Jr. Phantom Venom</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Nike Romaleos</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Nike Zoom Stefan Janoski</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Ralf Ringer</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Tommy Hilfiger</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Vans Authentic</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Vans Old Skool</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Vans Slip On</label></div>
+                                                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Converse All Star</label></div>
                                                         </div><!-- /.panel-body -->
                                                     </div><!-- /.panel-collapse -->
                                                 </div><!-- /.panel -->
 
-                                                <div class="">
+                                                <div>
                                                     <div class="panel-heading" role="tab" id="headingThree">
                                                         <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                            Format
+                                                            Price
                                                         </a><!-- /.panel-title -->
                                                     </div><!-- /.panel-heading -->
                                                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                        <div class="panel-body filter-body">
-                                                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="magazine">Magazine</label></div>
-                                                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="website">Website</label></div>
-                                                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="vine">Vine</label></div>
-                                                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="tweet">Tweet</label></div>
+                                                        <div class="panel-body filter-body price-slider">
+                                                            <p>
+                                                                <label for="amount">Price range:</label>
+                                                                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                                            </p>
+
+                                                            <div id="slider-range"></div>
                                                         </div><!-- /.panel-body -->
                                                     </div><!-- /.panel-collapse -->
                                                 </div><!-- /.panel -->
@@ -156,16 +199,6 @@
             </div><!-- /.primary -->
         </div>
         <div class="card-columns">
-<!--            <div class="card text-center" style="width: 18rem;">-->
-<!--                <img class="card-img-top" src="" alt="Card image cap">-->
-<!--                <div class="card-body">-->
-<!--                    <h5 class="card-title">{{model}}</h5>-->
-<!--                    <p class="card-text">{{design}}</p>-->
-<!--                    <p class="card-text">{{price}}</p>-->
-<!--                    <p class="card-text">{{id}}</p>-->
-<!--                    <a href="#" class="btn btn-primary">{{link}}</a>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </section>
     <script type="js/template" id="card-template"><div class="card text-center" style="width: 18rem;"><img class="card-img-top" src="{{image}}" alt="Card image cap"><div class="card-body"><h5 class="card-title">{{model}}</h5><p class="card-text">{{design}}</p><p class="card-text">{{price}}</p><p class="card-text">Ref № {{id}}</p><a href="#" class="btn btn-primary">{{link}}</a></div></div></script>

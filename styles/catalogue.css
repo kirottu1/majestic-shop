@@ -80,3 +80,19 @@
 .filter-body{
     padding-left: 2px!important;
 }
+.price-slider p{
+    font-size: 14px;
+    line-height: 1.88889;
+    color: #343a40;
+    font-weight: 300;
+}
+
+.price-slider{
+    padding-left: 2px!important;
+}
+
+.price-slider input{
+    line-height: 1.88889;
+    color: #343a40!important;
+    font-weight: 300!important;
+}
