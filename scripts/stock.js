@@ -48,16 +48,36 @@ function getPostHTML(data){
 //     });
 // });
 
-$("#headingOne").on('click', function() {
-    var links = $("input[name~='brand']");
-    var divs = $('.filterDiv');
-    links.click(function(event){
-        divs.hide();
-        divs.filter('.' + event.target.id).show();
-        if (event.target.checked === false){
-            divs.show()
+// $("#headingOne").on('click', function() {
+//     var links = $("input[name~='brand']");
+//     var divs = $('.filterDiv');
+//     links.click(function(event){
+//         divs.hide();
+//         divs.filter('.' + event.target.id).show();
+//         if (event.target.checked === false){
+//             divs.show()
+//         }
+//     });
+// });
+
+$(document).ready(function() {
+    var checkboxes = $("input[name='brand']");
+    checkboxes.on('change', function() {
+        var divs = $('.filterDiv');
+        var selectedBrands = checkboxes.filter(':checked').map(function() {
+            return this.id;
+        }).get();
+
+        if (selectedBrands.length > 0) {
+            divs.hide();
+            selectedBrands.forEach(function(brand) {
+                divs.filter('.' + brand).show();
+            });
+        } else {
+            divs.show();
         }
     });
 });
+
 
 /// написать цикл который будет захватывать все checked inputs и вот так бля фильтровать

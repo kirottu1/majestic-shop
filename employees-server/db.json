@@ -92,9 +92,9 @@
     },
     {
       "type": "shoes",
-      "model": "Nike Air Force 1",
+      "model": "Adidas Stan Smith",
       "brand": "Adidas",
-      "design": "Demon Slayer Manga",
+      "design": "Demon Slayer Action",
       "price": "100 GBP",
       "id": "367",
       "link": "",
@@ -102,13 +102,43 @@
     },
     {
       "type": "shoes",
-      "model": "Nike Air Force 1",
+      "model": "Adidas Superstar",
       "brand": "Adidas",
-      "design": "Roronoa zoro",
+      "design": "Love u sis",
       "price": "100 GBP",
       "id": "366",
       "link": "",
       "image": "./assets/shoe-catalogue/images/products/366/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Adidas Stan Smith",
+      "brand": "Adidas",
+      "design": "Cat Pet",
+      "price": "100 GBP",
+      "id": "364",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/364/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Adidas Stan Smith",
+      "brand": "Adidas",
+      "design": "The Little Mermaid",
+      "price": "100 GBP",
+      "id": "363",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/363/small/shoe.jpg"
+    },
+    {
+      "type": "shoes",
+      "model": "Adidas Superstar",
+      "brand": "Adidas",
+      "design": "Love u sis",
+      "price": "100 GBP",
+      "id": "362",
+      "link": "",
+      "image": "./assets/shoe-catalogue/images/products/362/small/shoe.jpg"
     },
     {
       "type": "shoes",
