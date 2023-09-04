@@ -33,4 +33,31 @@ function getPostHTML(data){
         .replace('{{image}}', data.image)
         .replace('{{price}}', data.price)
         .replace('{{link}}', data.link)
+        .replace('{{brand}}', data.brand)
+
 }
+
+/// filter menu
+
+// $(document).load(function(){
+//     var links = $("input[name~='brand']");
+//     var divs = $('.filterDiv');
+//     links.click(function(event){
+//         divs.hide();
+//         divs.filter('.' + event.target.id).show();
+//     });
+// });
+
+$("#headingOne").on('click', function() {
+    var links = $("input[name~='brand']");
+    var divs = $('.filterDiv');
+    links.click(function(event){
+        divs.hide();
+        divs.filter('.' + event.target.id).show();
+        if (event.target.checked === false){
+            divs.show()
+        }
+    });
+});
+
+/// написать цикл который будет захватывать все checked inputs и вот так бля фильтровать

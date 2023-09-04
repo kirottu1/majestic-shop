@@ -3,6 +3,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Grand Theft Auto V",
       "price": "100 GBP",
       "id": "392",
@@ -12,6 +13,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Bleach Ichigo vs Zaraki",
       "price": "50 GBP",
       "id": "391",
@@ -21,6 +23,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "KonoSuba",
       "price": "50 GBP",
       "id": "389",
@@ -30,6 +33,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Spider Man",
       "price": "100 GBP",
       "id": "388",
@@ -39,6 +43,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Epic Race",
       "price": "100 GBP",
       "id": "387",
@@ -48,6 +53,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Crypto Hasbulla",
       "price": "100 GBP",
       "id": "385",
@@ -57,6 +63,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Crypto BAYC",
       "price": "100 GBP",
       "id": "382",
@@ -66,6 +73,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Breaking Bad",
       "price": "100 GBP",
       "id": "379",
@@ -75,6 +83,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Nike",
       "design": "Japan Wave",
       "price": "100 GBP",
       "id": "368",
@@ -84,6 +93,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Adidas",
       "design": "Demon Slayer Manga",
       "price": "100 GBP",
       "id": "367",
@@ -93,6 +103,7 @@
     {
       "type": "shoes",
       "model": "Nike Air Force 1",
+      "brand": "Adidas",
       "design": "Roronoa zoro",
       "price": "100 GBP",
       "id": "366",
