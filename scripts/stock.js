@@ -99,7 +99,7 @@ function initializeFiltering() {
             const modelIncluded = selectedModels.length === 0 || selectedModels.includes(model);
 
             if (brandIncluded && modelIncluded) {
-                div.style.display = 'block';
+                div.style.display = 'inline-block';
             } else {
                 div.style.display = 'none';
             }
