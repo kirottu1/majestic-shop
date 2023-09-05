@@ -42,7 +42,7 @@
     },
     {
       "type": "shoes",
-      "model": "Nike Air Force 1",
+      "model": "Nike Air Force",
       "brand": "Nike",
       "design": "Epic Race",
       "price": "100 GBP",
@@ -52,7 +52,7 @@
     },
     {
       "type": "shoes",
-      "model": "Nike Air Force 1",
+      "model": "Nike Air Force",
       "brand": "Nike",
       "design": "Crypto Hasbulla",
       "price": "100 GBP",
@@ -142,12 +142,13 @@
     },
     {
       "type": "shoes",
-      "model": "Nike Air Force 1",
-      "design": "Thought",
+      "model": "Adidas Yeezy Boost 350 v2",
+      "brand": "Adidas",
+      "design": "Rorschach face",
       "price": "100 GBP",
-      "id": "365",
+      "id": "361",
       "link": "",
-      "image": "./assets/shoe-catalogue/images/products/365/small/shoe.jpg"
+      "image": "./assets/shoe-catalogue/images/products/361/small/shoe.jpg"
     }
   ],
   "users": [
