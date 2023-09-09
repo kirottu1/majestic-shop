@@ -167,17 +167,31 @@
     },
     {
       "firstName": "ads",
-      "lastName": "asddsadsa",
-      "email": "gg@gmail.com",
+      "lastName": "qwwwqwq",
+      "email": "gqwewqeqwg@gmail.com",
       "phoneNumber": "07312585646",
-      "password": "wqewqewq"
+      "password": "$2b$10$Me73JIBg9pbDLcXdCuW.vOFmxYO6Z8LzEstcQ6AtwlmN6In2FcTpq"
     },
     {
-      "firstName": "cyril",
-      "lastName": "i",
-      "email": "gqwewqeg@gmail.com",
-      "phoneNumber": "11111",
-      "password": "qwrrrr"
+      "firstName": "ads",
+      "lastName": "qwwwqwq",
+      "email": "f@gmail.com",
+      "phoneNumber": "07312585646",
+      "password": "$2b$10$LIWZ7i2sZ1T47HrbkXVMmuvICJe5UW/5DxbXVRpl2RZlJTqoQr5Uu"
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "e@gmail.com",
+      "phoneNumber": "222",
+      "password": "$2b$10$wQBGJa1LPGWr6Fg9pTqEk.di5Gsc67yT71QUwjjwG59Cw6lz2cqA."
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "e2@gmail.com",
+      "phoneNumber": "222",
+      "password": "$2b$10$8FFPxZ5H7taDL5IXqntZBO6r8yH5TnxfXOZQtd4Q4A26fT539doH."
     }
   ]
 }
