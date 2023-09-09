@@ -78,7 +78,41 @@
       </ul>
     </div>
   </header>
-  <section></section>
+  <section>
+    <script>
+      // Retrieve the JWT token from local storage
+      const jwtToken = localStorage.getItem("jwtToken");
+      console.log("Token retrieved:", jwtToken); // Add this line for debugging
+
+      // Check if the token exists and make the request
+      if (jwtToken) {
+        fetch("/personal-account", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${jwtToken}`,
+          },
+        })
+                .then((response) => {
+                  console.log("Response status:", response.status); // Add this line for debugging
+
+                  if (response.ok) {
+                    // User is authenticated, display content
+                  } else {
+                    alert('You are not authorized to access this page. Please log in.');
+                    window.location.href = '/login.html';
+                  }
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                });
+      } else {
+        alert('You are not authorized to access this page. Please log in.');
+        window.location.href = '/login.html';
+      }
+    </script>
+
+  </section>
 </div>
 <footer>
   <div class="page-footer-data">

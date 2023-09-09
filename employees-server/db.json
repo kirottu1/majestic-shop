@@ -192,6 +192,13 @@
       "email": "e2@gmail.com",
       "phoneNumber": "222",
       "password": "$2b$10$8FFPxZ5H7taDL5IXqntZBO6r8yH5TnxfXOZQtd4Q4A26fT539doH."
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "e22@gmail.com",
+      "phoneNumber": "222",
+      "password": "$2b$10$ebdNaHXibX3NQGznF6LRh.PjArzHXPLxUpvMzK1QBy8lBfsekARY."
     }
   ]
 }

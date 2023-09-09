@@ -97,23 +97,18 @@
         <button type="submit" class="btn btn-primary mt-3">Login</button>
       </form>
       <script>
-        // Assume you have a function to handle form submission, triggered on form submit
         document.getElementById("loginForm").addEventListener("submit", function (e) {
           e.preventDefault();
 
-          // Get user input values
           const email = document.getElementById("email").value;
           const password = document.getElementById("password").value;
           const staySignedIn = document.getElementById("staySignedIn").checked;
-
-          // Create an object with user input
           const userData = {
             email: email,
             password: password,
             staySignedIn: staySignedIn,
           };
 
-          // Send a POST request to the server for user authentication
           fetch("/login", {
             method: "POST",
             headers: {
@@ -123,21 +118,24 @@
           })
                   .then((response) => response.json())
                   .then((data) => {
-                    if (data.message === "Login successful") {
-                      // Redirect or show a success message
-                      alert("Login successful");
-                      // You can redirect the user to another page here
+                    if (data.token) {
+                      // Store the JWT token in local storage
+                      localStorage.setItem("jwtToken", data.token);
+                      console.log("Token stored:", data.token); // Add this line for debugging
+
+                      // Redirect to the personal account page
+                      window.location.href = "/personal-account.html";
                     } else {
-                      // Show an error message
                       alert("Login failed. Please check your credentials.");
                     }
                   })
+
                   .catch((error) => {
                     console.error("Error:", error);
                   });
         });
-
       </script>
+
     </div>
   </section>
 </div>
