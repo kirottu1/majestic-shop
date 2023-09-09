@@ -154,16 +154,30 @@
   "users": [
     {
       "type": "user",
-      "login": "",
-      "password": "",
+      "firstName": "",
+      "lastName": "",
       "email": "",
-      "name": "",
-      "phone": ""
+      "phoneNumber": "",
+      "password": ""
     },
     {
       "type": "admin",
       "login": "",
       "password": ""
+    },
+    {
+      "firstName": "ads",
+      "lastName": "asddsadsa",
+      "email": "gg@gmail.com",
+      "phoneNumber": "07312585646",
+      "password": "wqewqewq"
+    },
+    {
+      "firstName": "cyril",
+      "lastName": "i",
+      "email": "gqwewqeg@gmail.com",
+      "phoneNumber": "11111",
+      "password": "qwrrrr"
     }
   ]
 }
