@@ -16,6 +16,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script defer src="./scripts/main.js"></script>
+  <script defer src="./scripts/login.js"></script>
 </head>
 <body>
 <!-- Include your header here -->
@@ -83,58 +84,28 @@
       <h2>Login</h2>
       <form id="loginForm">
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email" id="emailLabel" data-click-count="0">Email</label>
           <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" required>
         </div>
+        <div class="form-group" id="totpField" style="display: none;">
+          <label for="admintotpCode">2FA Code</label>
+          <input type="text" id="admintotpCode" name="totpCode" class="form-control">
+        </div>
+<!--        <div class="form-group">-->
+<!--          <label for="totpCode">2FA Code:</label>-->
+<!--          <input type="text" id="totpCode" name="totpCode" required>-->
+<!--        </div>-->
         <div class="form-check">
           <input type="checkbox" id="staySignedIn" name="staySignedIn" class="form-check-input">
           <label for="staySignedIn" class="form-check-label">Stay signed in</label>
         </div>
+        <input type="hidden" id="jwtToken" name="jwtToken">
         <button type="submit" class="btn btn-primary mt-3">Login</button>
       </form>
-      <script>
-        document.getElementById("loginForm").addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-          const staySignedIn = document.getElementById("staySignedIn").checked;
-          const userData = {
-            email: email,
-            password: password,
-            staySignedIn: staySignedIn,
-          };
-
-          fetch("/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData),
-          })
-                  .then((response) => response.json())
-                  .then((data) => {
-                    if (data.token) {
-                      // Store the JWT token in local storage
-                      localStorage.setItem("jwtToken", data.token);
-                      console.log("Token stored:", data.token); // Add this line for debugging
-
-                      // Redirect to the personal account page
-                      window.location.href = "/personal-account.html";
-                    } else {
-                      alert("Login failed. Please check your credentials.");
-                    }
-                  })
-
-                  .catch((error) => {
-                    console.error("Error:", error);
-                  });
-        });
-      </script>
 
     </div>
   </section>
