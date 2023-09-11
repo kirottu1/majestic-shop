@@ -190,14 +190,14 @@
       "lastName": "2",
       "email": "2@gmail.com",
       "phoneNumber": "2",
-      "password": "$2b$10$CV3WuqK8HpbAGtXZ/EN.vun6kbw6U0yv5sjQ.tlvIfq6fvUBpC8CC"
+      "password": "$2b$10$tH/GvTZpgyX84A38dC.I1uFKc7E3DMoavy6oxFKweoCY/ZJ7xAm4a"
     },
     {
       "firstName": "3",
       "lastName": "3",
       "email": "3@gmail.com",
       "phoneNumber": "3",
-      "password": "$2b$10$zjhgFC16vlyC1J2DifsEoul0SzXK7YQtdXEngOatIyiRuZmGkKnQy"
+      "password": "$2b$10$4RVfzXFmVb6ddkS9uDKmMey52GjMhxrTar.Ro6Swa.gD0V6kJUu/S"
     }
   ]
 }

@@ -95,27 +95,15 @@ app.post('/register', async (req, res) => {
 
         // Update the db.json file with the new user data
         fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
-        passport.use(
-            new JwtStrategy(
-                {
-                    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-                    secretOrKey: JWT_SECRET,
-                },
-                (jwtPayload, done) => {
-                    // Find the user by ID
-                    const user = db.users.find((user) => user.id === jwtPayload.sub);
 
-                    // If the user is found, return the user
-                    if (user) {
-                        return done(null, user);
-                    } else {
-                        return done(null, false);
-                    }
-                }
-            )
-        );
+        const token = jwt.sign({ sub: userWithHashedPassword.id }, JWT_SECRET);
+
+        console.log('User Registered:', userWithHashedPassword);
+        console.log('Generated Token:', token);
+
+
         // Respond with a success message
-        res.json({ message: 'Registration successful' });
+        res.json({ token: token, message: 'Registration successful' });
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ message: 'Registration failed' });
