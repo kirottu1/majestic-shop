@@ -113,7 +113,25 @@ app.post('/register', async (req, res) => {
 
         // Update the db.json file with the new user data
         fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
+        passport.use(
+            new JwtStrategy(
+                {
+                    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+                    secretOrKey: JWT_SECRET,
+                },
+                (jwtPayload, done) => {
+                    // Find the user by ID
+                    const user = db.users.find((user) => user.id === jwtPayload.sub);
 
+                    // If the user is found, return the user
+                    if (user) {
+                        return done(null, user);
+                    } else {
+                        return done(null, false);
+                    }
+                }
+            )
+        );
         // Respond with a success message
         console.log(secretKey)
         res.json({ message: 'Registration successful. Your secret key is - ' + secretKey });
@@ -135,6 +153,9 @@ app.post('/login', (req, res, next) => {
         }
 
         // Check if the provided password is correct
+        console.log('Request Email:', req.body.email);
+        console.log('Request Password:', req.body.password);
+        console.log('User Password:', user.password);
         if (!bcrypt.compareSync(req.body.password, user.password)) {
             return res.status(401).json({ message: 'Incorrect email or password' });
         }

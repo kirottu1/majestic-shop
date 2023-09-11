@@ -79,7 +79,8 @@
     </div>
   </header>
   <section>
-    <button id="logoutButton" class="btn btn-primary">Logout</button>
+    <h1>Welcome to your personal account</h1>
+    <button id="logoutButton">Logout</button>
     <script>
       // Retrieve the JWT token from local storage
       const jwtToken = localStorage.getItem("jwtToken");
@@ -111,14 +112,14 @@
         alert('You are not authorized to access this page. Please log in.');
         window.location.href = '/login.html';
       }
-      document.getElementById("logoutButton").addEventListener("click", function () {
+
+      // Logout button click event handler
+      const logoutButton = document.getElementById('logoutButton');
+      logoutButton.addEventListener('click', () => {
         // Clear the JWT token from local storage
         localStorage.removeItem("jwtToken");
-
-        // Redirect the user to the login page
-        window.location.href = "/login.html";
+        window.location.href = '/login.html';
       });
-
     </script>
 
   </section>

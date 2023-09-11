@@ -153,11 +153,9 @@
   ],
   "users": [
     {
-      "firstName": "ads",
-      "lastName": "qwwwqwq",
-      "email": "gqwewqeqwg@gmail.com",
-      "phoneNumber": "07312585646",
-      "password": "$2b$10$Me73JIBg9pbDLcXdCuW.vOFmxYO6Z8LzEstcQ6AtwlmN6In2FcTpq"
+      "type": "admin",
+      "login": "",
+      "password": ""
     },
     {
       "firstName": "ads",
@@ -174,133 +172,32 @@
       "password": "$2b$10$wQBGJa1LPGWr6Fg9pTqEk.di5Gsc67yT71QUwjjwG59Cw6lz2cqA."
     },
     {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "e2@gmail.com",
-      "phoneNumber": "222",
-      "password": "$2b$10$8FFPxZ5H7taDL5IXqntZBO6r8yH5TnxfXOZQtd4Q4A26fT539doH."
+      "firstName": "7",
+      "lastName": "7",
+      "email": "7@gmail.com",
+      "phoneNumber": "7",
+      "password": "$2b$10$tdlf50aHnWXFZ07ctZHwse/ng22KpeMXVe1oL3RQ33Brpv2/IYkeK"
     },
     {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "e22@gmail.com",
-      "phoneNumber": "222",
-      "password": "$2b$10$ebdNaHXibX3NQGznF6LRh.PjArzHXPLxUpvMzK1QBy8lBfsekARY."
-    },
-    {
-      "type": "admin",
-      "login": "admin",
-      "password": "adminPassword",
-      "secretKey": "GNAWI2DLIR2VKTJ2OA5CGYT5NBJFUZZB"
-    },
-    {
-      "firstName": "w",
-      "lastName": "q",
+      "firstName": "1",
+      "lastName": "1",
       "email": "1@gmail.com",
-      "phoneNumber": "11",
-      "password": "$2b$10$2FkaZOvOCLicuahwijbKIORD0MNqyv6FRHJrY9Yi.udMkVai2Buaa"
-    },
-    {
-      "firstName": "wqqwqw",
-      "lastName": "qwqw",
-      "email": "q@gmail.com",
-      "phoneNumber": "11",
-      "password": "$2b$10$DZPyL/Tu0XMLHjqZAD.HKO73iIvswWjbkk0kAp4TupzEVuMHbTY7y"
-    },
-    {
-      "firstName": "ee",
-      "lastName": "qq",
-      "email": "12@gmail.com",
-      "phoneNumber": "333",
-      "password": "$2b$10$jYoqRGfqRWa8co0vC7NakOWqsLIseG.ei0txoiT/Zst0VpgJOFiJ2"
-    },
-    {
-      "firstName": "rr",
-      "lastName": "q",
-      "email": "13@gmail.com",
-      "phoneNumber": "11",
-      "password": "$2b$10$0tkcQ52ZqbdOSAK6DDkHDu6P0vfzz/cZgzTQUVortyl8zPyQsVN/.",
-      "secretKey": "MNZFMKSFKNHUWLRIPBOWWIZ7H5OWYILS"
-    },
-    {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "qqq@gmail.com",
-      "phoneNumber": "111",
-      "password": "$2b$10$jtGeWVPuQ6Zn6lGbdXpZEuendkPxOu6cTug0NDMQUGJ2SL.C9nNjS",
-      "secretKey": "LV2SISRULVISYTCYMZGHA6T2EFQTGZ3U"
-    },
-    {
-      "firstName": "y",
-      "lastName": "y",
-      "email": "y@gmail.com",
-      "phoneNumber": "11",
-      "password": "$2b$10$10Jbw3OAK.mhjXKKPPOYt.qBNRrmdxDiZZ6hT1luZNu4SyMxccSku",
-      "secretKey": "J5ETM6RKJZYGSLBYGZLW4YLJFEYFQ3LL"
-    },
-    {
-      "firstName": "u",
-      "lastName": "u",
-      "email": "u@gmail.com",
       "phoneNumber": "1",
-      "password": "$2b$10$uVRy2bHkR52/9rdGjFzsQ.un/diheD9CzbQRkIMCZt/b8sm4NXR1.",
-      "secretKey": "LJDDAVBVMRKWK22LLM7TURLII5NEGOTN"
+      "password": "$2b$10$xRR.WXkFTPwBy8UqHEJyLex4e.5/BwP0UxnZL6Bf2ZHVXjBJlIDxK"
     },
     {
-      "firstName": "k",
-      "lastName": "k",
-      "email": "k@gmail.com",
-      "phoneNumber": "12",
-      "password": "$2b$10$75qTT1A4JuNsqduB8GzKBOcN0l4FCVVhhFIa17uMCTnYYSSIVOMAi",
-      "secretKey": "JBEHUNJ6FARS4XSHLZ5EIKLIOVLVIVKU"
+      "firstName": "2",
+      "lastName": "2",
+      "email": "2@gmail.com",
+      "phoneNumber": "2",
+      "password": "$2b$10$CV3WuqK8HpbAGtXZ/EN.vun6kbw6U0yv5sjQ.tlvIfq6fvUBpC8CC"
     },
     {
-      "firstName": "c",
-      "lastName": "c",
-      "email": "c@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$Qp3FiXkmnuEijrB/egGbyeICiWI4ZVOhLDT6R73kWbr0bIGs2PULa",
-      "secretKey": "EYSXMOBYJY7CY4ZBJAXHEUSIJRFFIMCB"
-    },
-    {
-      "firstName": "m",
-      "lastName": "m",
-      "email": "m@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$VzoCoJbSwZVzcjLQ/CFRDOC9t3EaKzRIot33oHFrNhapGhF0YPTmu",
-      "secretKey": "IAVHKKTJLUYGYXLFFJKFMS3YGIYGCSLB"
-    },
-    {
-      "firstName": "b",
-      "lastName": "b",
-      "email": "b@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$sZ5e/c6L73aDatmGIw23XuMnutOlTpp7IK8SNdBevjhOS3hUkzpsC",
-      "secretKey": "EV2UOST2MUXHSJDVKQYC6JRRFZKFK6TL"
-    },
-    {
-      "firstName": "v",
-      "lastName": "v",
-      "email": "v@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$6Qo81nVXATRRiaDbyXP8WOYJ6KpyWu04p5J1fufuRRZbgLssvWWNK",
-      "secretKey": "EM5CQ2LQFJKDYNCNGRNSGSJGEN4HOVDR"
-    },
-    {
-      "firstName": "z",
-      "lastName": "z",
-      "email": "zz@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$o5UlOk4eUNKVXWuetYls9utP08PdxdX4yihNQeNdhB9MNlNRMS/PC",
-      "secretKey": "JFPGQW2SEZFGM533FRDFWU3JJRQTGMKQ"
-    },
-    {
-      "firstName": "z",
-      "lastName": "z",
-      "email": "zzz@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$qySzI3h3nrbdkTtvJQLmLuoayJOyUL/G6MzjbYXInRQ99BVtOwARi",
-      "secretKey": "EM5GWKRMINUEEKR2GM4T46ZXJNAF2TSY"
+      "firstName": "3",
+      "lastName": "3",
+      "email": "3@gmail.com",
+      "phoneNumber": "3",
+      "password": "$2b$10$zjhgFC16vlyC1J2DifsEoul0SzXK7YQtdXEngOatIyiRuZmGkKnQy"
     }
   ]
 }
