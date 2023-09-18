@@ -153,11 +153,6 @@
   ],
   "users": [
     {
-      "type": "admin",
-      "login": "",
-      "password": ""
-    },
-    {
       "firstName": "ads",
       "lastName": "qwwwqwq",
       "email": "f@gmail.com",
@@ -186,18 +181,18 @@
       "password": "$2b$10$xRR.WXkFTPwBy8UqHEJyLex4e.5/BwP0UxnZL6Bf2ZHVXjBJlIDxK"
     },
     {
-      "firstName": "2",
-      "lastName": "2",
-      "email": "2@gmail.com",
-      "phoneNumber": "2",
-      "password": "$2b$10$tH/GvTZpgyX84A38dC.I1uFKc7E3DMoavy6oxFKweoCY/ZJ7xAm4a"
+      "firstName": "5",
+      "lastName": "5",
+      "email": "5@gmail.com",
+      "password": "5",
+      "phoneNumber": "5"
     },
     {
-      "firstName": "3",
-      "lastName": "3",
-      "email": "3@gmail.com",
-      "phoneNumber": "3",
-      "password": "$2b$10$4RVfzXFmVb6ddkS9uDKmMey52GjMhxrTar.Ro6Swa.gD0V6kJUu/S"
+      "firstName": "6",
+      "lastName": "6",
+      "email": "6@gmail.com",
+      "password": "6",
+      "phoneNumber": "6"
     }
   ]
 }

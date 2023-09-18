@@ -1,17 +1,49 @@
 {
-  "name": "E-commerce website",
+  "name": "e-commerce-website-mysql",
   "version": "1.0.0",
+  "description": "trying my best",
+  "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    "bcrypt": "^5.1.1",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.1",
+    "otplib": "^12.0.1",
+    "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.33.0",
     "speakeasy": "^2.0.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BceHaxep/project.git"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "login",
+    "registration",
+    "rest",
+    "api",
+    "jwt",
+    "authentication",
+    "authorization",
+    "mysql"
+  ],
+  "author": "kirottu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BceHaxep/project/issues"
+  },
+  "homepage": "https://github.com/BceHaxep/project#readme"
 }

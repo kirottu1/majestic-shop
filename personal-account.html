@@ -16,6 +16,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script defer src="./scripts/main.js"></script>
+  <script defer src="./scripts/personal-account.js"></script>
 </head>
 <body>
 <!-- Include your header here -->
@@ -79,46 +80,49 @@
     </div>
   </header>
   <section>
-    <h1>Welcome to your personal account</h1>
-    <button id="logoutButton">Logout</button>
+    <h1 id="welcomeMessage">Welcome back, </h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#personal-details">Personal Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#purchase-history">Purchase History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bonuses">Bonuses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#payment-methods">Payment Methods</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-link nav-link" id="logoutButton">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <script>
-      // Retrieve the JWT token from local storage
-      const jwtToken = localStorage.getItem("jwtToken");
-      console.log("Token retrieved:", jwtToken); // Add this line for debugging
+      // Handle navigation link clicks
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = e.target.getAttribute('href').substring(1); // Remove the '#' symbol
+          const targetSection = document.getElementById(targetId);
 
-      // Check if the token exists and make the request
-      if (jwtToken) {
-        fetch("/personal-account", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${jwtToken}`,
-          },
-        })
-                .then((response) => {
-                  console.log("Response status:", response.status); // Add this line for debugging
+          // Hide all content sections
+          const contentSections = document.querySelectorAll('.content-section');
+          contentSections.forEach((section) => {
+            section.style.display = 'none';
+          });
 
-                  if (response.ok) {
-                    // User is authenticated, display content
-                  } else {
-                    alert('You are not authorized to access this page. Please log in.');
-                    window.location.href = '/login.html';
-                  }
-                })
-                .catch((error) => {
-                  console.error('Error:', error);
-                });
-      } else {
-        alert('You are not authorized to access this page. Please log in.');
-        window.location.href = '/login.html';
-      }
-
-      // Logout button click event handler
-      const logoutButton = document.getElementById('logoutButton');
-      logoutButton.addEventListener('click', () => {
-        // Clear the JWT token from local storage
-        localStorage.removeItem("jwtToken");
-        window.location.href = '/login.html';
+          // Show the target content section
+          targetSection.style.display = 'block';
+        });
       });
     </script>
 

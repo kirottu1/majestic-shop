@@ -1,149 +1,59 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+const cookieSession = require("cookie-session");
+
 const app = express();
-const fs = require('fs');
-const path = require('path');
-const bcrypt = require('bcrypt');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const JwtStrategy = require('passport-jwt').Strategy;
-const ExtractJwt = require('passport-jwt').ExtractJwt;
-const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = '1abc3222748541707846970b016a2d45f13507597ded2b54d87a72961c5cf18f';
+app.use(cors());
 
-const dbPath = path.join(__dirname, 'employees-server', 'db.json');
-const db = JSON.parse(fs.readFileSync(dbPath));
+// parse requests of content-type - application/json
+app.use(express.json());
 
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json()); // Parse JSON request bodies
-
-// Serve your HTML, CSS, and JavaScript files from the root folder
-app.use(express.static(__dirname)); // Serve files from the root folder
-
-
-passport.use(
-    new LocalStrategy(
-        { usernameField: 'email', passwordField: 'password' },
-        (email, password, done) => {
-            // Find the user by email
-            const user = db.users.find((user) => user.email === email);
-
-            // If the user is not found or the password is incorrect, return an error
-            if (!user || !bcrypt.compareSync(password, user.password)) {
-                return done(null, false, { message: 'Incorrect email or password' });
-            }
-
-            // Authentication successful, return the user
-            return done(null, user);
-        }
-    )
+app.use(
+    cookieSession({
+        name: "kirottu-session",
+        keys: ["COOKIE_SECRET"], // should use as secret environment variable
+        httpOnly: true,
+    })
 );
 
-// Passport JWT Strategy for protected routes
-passport.use(
-    new JwtStrategy(
-        {
-            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-            secretOrKey: JWT_SECRET,
-        },
-        (jwtPayload, done) => {
-            // Find the user by ID
-            const user = db.users.find((user) => user.id === jwtPayload.sub);
+const db = require("./app/models");
+const Role = db.role;
 
-            // If the user is found, return the user
-            if (user) {
-                return done(null, user);
-            } else {
-                return done(null, false);
-            }
-        }
-    )
-);
-
-app.use(passport.initialize());
-
-// Handle user registration
-
-app.post('/register', async (req, res) => {
-    const newUser = req.body;
-
-    // Generate a salt and hash the user's password
-    try {
-        const saltRounds = 10; // Adjust the number of rounds as needed for your application
-        const hashedPassword = await bcrypt.hash(newUser.password, saltRounds);
-
-        // Create a new user object with the hashed password
-        const userWithHashedPassword = {
-            ...newUser,
-            password: hashedPassword,
-        };
-
-        // Define the path to the db.json file
-        const dbPath = path.join(__dirname, 'employees-server', 'db.json');
-
-        // Load the existing database
-        const db = JSON.parse(fs.readFileSync(dbPath));
-
-        // Check if the email already exists in the database
-        const existingUser = db.users.find(user => user.email === newUser.email);
-        if (existingUser) {
-            return res.status(400).json({ message: 'Email already registered' });
-        }
-
-        // Add the new user to the database
-        db.users.push(userWithHashedPassword);
-
-        // Update the db.json file with the new user data
-        fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
-
-        const token = jwt.sign({ sub: userWithHashedPassword.id }, JWT_SECRET);
-
-        console.log('User Registered:', userWithHashedPassword);
-        console.log('Generated Token:', token);
-
-
-        // Respond with a success message
-        res.json({ token: token, message: 'Registration successful' });
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ message: 'Registration failed' });
-    }
+db.sequelize.sync({force: true}).then(() => {
+    console.log('Drop and Resync Db');
+    initial();
 });
 
-// Handle user login
-app.post('/login', (req, res, next) => {
-    passport.authenticate('local', { session: false }, (err, user, info) => {
-        if (err) {
-            return res.status(500).json({ message: 'Internal server error' });
-        }
+function initial() {
+    Role.create({
+        id: 1,
+        name: "user"
+    });
 
-        if (!user) {
-            return res.status(401).json({ message: info.message });
-        }
+    Role.create({
+        id: 2,
+        name: "moderator"
+    });
 
-        // Check if the provided password is correct
-        console.log('Request Email:', req.body.email);
-        console.log('Request Password:', req.body.password);
-        console.log('User Password:', user.password);
-        if (!bcrypt.compareSync(req.body.password, user.password)) {
-            return res.status(401).json({ message: 'Incorrect email or password' });
-        }
-
-        // Generate JWT token
-        const token = jwt.sign({ sub: user.id }, JWT_SECRET);
-
-        return res.json({ token });
-    })(req, res, next);
+    Role.create({
+        id: 3,
+        name: "admin"
+    });
+}
+// simple route
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to kirottu application." });
 });
 
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
-app.get('/personal-account', passport.authenticate('jwt', { session: false }), (req, res) => {
-    // If the user reaches this route, it means they are authenticated
-    res.json({ message: 'You have access to your personal account.' });
-});
-
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
 });

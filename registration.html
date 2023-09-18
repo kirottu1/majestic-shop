@@ -27,7 +27,7 @@
   <!--    <script defer src="./scripts/jquery.js"></script>-->
   <!--    <script defer src="./scripts/jqueryUI.js"></script>-->
   <script defer src="./scripts/main.js"></script>
-  <script defer src="./scripts/auth.js"></script>
+<!--  <script defer src="./scripts/auth.js"></script>-->
 </head>
 <body>
 <div class="body-block">
@@ -90,79 +90,32 @@
     </div>
   </header>
   <section>
-    <form id="registrationForm" action="/register" method="post">
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" required>
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button type="submit">Register</button>
-    </form>
-    <script>
-      // Client-side JavaScript code for handling the form submission
-      document.getElementById('registrationForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(e.target);
-        const newUser = {};
-
-        formData.forEach((value, key) => {
-          newUser[key] = value;
-        });
-
-        // Send a POST request to the server
-        try {
-          const registrationResponse = await fetch('/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newUser),
-          });
-
-          if (registrationResponse.ok) {
-            const registrationResult = await registrationResponse.json();
-            alert(registrationResult.message); // Display a success message
-
-            // Check if registration was successful and a token is provided
-            if (registrationResult.token) {
-              // Store the token in local storage
-              localStorage.setItem('jwtToken', registrationResult.token);
-
-              // Now, you can make an authenticated request
-              const result = await sendAuthenticatedRequest('/personal-account', 'GET');
-              if (result) {
-                console.log(result); // Handle the response data
-              } else {
-                console.error('Request failed or user is not authenticated.');
-              }
-            } else {
-              console.error('Registration failed. No token received.');
-            }
-          } else {
-            alert('Registration failed'); // Display an error message
-          }
-        } catch (error) {
-          console.error('Error:', error);
-          alert('An error occurred'); // Display an error message
-        }
-      });
-    </script>
+    <div class="container mt-5">
+      <h2>Registration</h2>
+      <form id="registrationForm" action="/register" method="POST">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Register</button>
+      </form>
+    </div>
   </section>
   </div>
 <footer>

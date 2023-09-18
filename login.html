@@ -90,10 +90,6 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" required>
         </div>
-        <div class="form-check">
-          <input type="checkbox" id="staySignedIn" name="staySignedIn" class="form-check-input">
-          <label for="staySignedIn" class="form-check-label">Stay signed in</label>
-        </div>
         <button type="submit" class="btn btn-primary mt-3">Login</button>
       </form>
       <script>
@@ -102,11 +98,9 @@
 
           const email = document.getElementById("email").value;
           const password = document.getElementById("password").value;
-          const staySignedIn = document.getElementById("staySignedIn").checked;
           const userData = {
             email: email,
             password: password,
-            staySignedIn: staySignedIn,
           };
 
           fetch("/login", {
@@ -118,18 +112,13 @@
           })
                   .then((response) => response.json())
                   .then((data) => {
-                    if (data.token) {
-                      // Store the JWT token in local storage
-                      localStorage.setItem("jwtToken", data.token);
-                      console.log("Token stored:", data.token); // Add this line for debugging
-
-                      // Redirect to the personal account page
-                      window.location.href = "/personal-account.html";
+                    if (data.message === 'Login successful') {
+                      // Redirect to the personal account page or perform any other actions
+                      window.location.href = `/personal-account.html?firstName=${data.firstName}`;
                     } else {
                       alert("Login failed. Please check your credentials.");
                     }
                   })
-
                   .catch((error) => {
                     console.error("Error:", error);
                   });
