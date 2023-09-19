@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const path = require("path");
 
 const app = express();
 
@@ -44,6 +45,9 @@ function initial() {
         name: "admin"
     });
 }
+
+app.use(express.static(path.join(__dirname)));
+
 // simple route
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to kirottu application." });
