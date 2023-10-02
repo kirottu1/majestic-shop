@@ -416,3 +416,12 @@ footer{
   //padding-right: 100px;
   width: 19%;
 }
+
+/* CSS for the image grid */
+.image-grid {
+  display: grid;
+  grid-gap: 1rem; /* 1rem gap between columns and rows */
+}
+.quantity-selector .input-group{
+  width: 15%;
+}

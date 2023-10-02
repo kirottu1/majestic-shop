@@ -5,9 +5,9 @@
       "model": "Nike Air Force 1",
       "brand": "Nike",
       "design": "Grand Theft Auto V",
-      "price": "100 GBP",
+      "price": 100,
       "id": "392",
-      "link": "",
+      "description": "Custom sneakers based on the game GTA 5. World-class professional work. First, we create a layout and approve it with the customer, after which we begin customization. Helping you with an idea is our job. Making masterpieces is our calling.",
       "image": "./assets/shoe-catalogue/images/products/392/small/shoe.jpg"
     },
     {
@@ -15,7 +15,7 @@
       "model": "Nike Air Force 1",
       "brand": "Nike",
       "design": "Bleach Ichigo vs Zaraki",
-      "price": "50 GBP",
+      "price": 50,
       "id": "391",
       "link": "",
       "image": "./assets/shoe-catalogue/images/products/391/small/shoe.jpg"
@@ -25,7 +25,7 @@
       "model": "Nike Air Force 1",
       "brand": "Nike",
       "design": "KonoSuba",
-      "price": "50 GBP",
+      "price": 50,
       "id": "389",
       "link": "",
       "image": "./assets/shoe-catalogue/images/products/389/small/shoe.jpg"
@@ -149,50 +149,6 @@
       "id": "361",
       "link": "",
       "image": "./assets/shoe-catalogue/images/products/361/small/shoe.jpg"
-    }
-  ],
-  "users": [
-    {
-      "firstName": "ads",
-      "lastName": "qwwwqwq",
-      "email": "f@gmail.com",
-      "phoneNumber": "07312585646",
-      "password": "$2b$10$LIWZ7i2sZ1T47HrbkXVMmuvICJe5UW/5DxbXVRpl2RZlJTqoQr5Uu"
-    },
-    {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "e@gmail.com",
-      "phoneNumber": "222",
-      "password": "$2b$10$wQBGJa1LPGWr6Fg9pTqEk.di5Gsc67yT71QUwjjwG59Cw6lz2cqA."
-    },
-    {
-      "firstName": "7",
-      "lastName": "7",
-      "email": "7@gmail.com",
-      "phoneNumber": "7",
-      "password": "$2b$10$tdlf50aHnWXFZ07ctZHwse/ng22KpeMXVe1oL3RQ33Brpv2/IYkeK"
-    },
-    {
-      "firstName": "1",
-      "lastName": "1",
-      "email": "1@gmail.com",
-      "phoneNumber": "1",
-      "password": "$2b$10$xRR.WXkFTPwBy8UqHEJyLex4e.5/BwP0UxnZL6Bf2ZHVXjBJlIDxK"
-    },
-    {
-      "firstName": "5",
-      "lastName": "5",
-      "email": "5@gmail.com",
-      "password": "5",
-      "phoneNumber": "5"
-    },
-    {
-      "firstName": "6",
-      "lastName": "6",
-      "email": "6@gmail.com",
-      "password": "6",
-      "phoneNumber": "6"
     }
   ]
 }
