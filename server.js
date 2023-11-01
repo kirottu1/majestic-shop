@@ -23,6 +23,8 @@ app.use(
 
 const db = require("./app/models");
 const Role = db.role;
+const CartItem = db.cart_item;
+
 
 db.sequelize.sync({force: true}).then(() => {
     console.log('Drop and Resync Db');
@@ -58,7 +60,7 @@ app.get("/", (req, res) => {
 app.get('/item/:id', async (req, res) => {
     try {
         const itemId = req.params.id; // Get the item ID from the URL
-
+        console.log(itemId)
         // Make an HTTP GET request to fetch item data based on the itemId
         const response = await axios.get(`http://localhost:3000/stock?id=${itemId}`);
         // Extract the item data from the response
@@ -73,6 +75,44 @@ app.get('/item/:id', async (req, res) => {
         console.error('Error fetching item data:', error);
         // You can also render an error page or redirect as needed
         res.status(500).send('Internal Server Error');
+    }
+});
+
+app.post('/add-to-cart', async (req, res) => {
+    const { product_id, quantity } = req.body;
+    const session_id = req.session.sessionId; // Get the session ID from the user's session
+    console.log("Received request to add item to cart");
+    console.log("Product ID:", product_id);
+    console.log("Quantity:", quantity);
+    console.log("Session ID:", session_id);
+    try {
+        const existingCartItem = await CartItem.findOne({
+            where: {
+                product_id,
+                session_id,
+            },
+        });
+
+        if (existingCartItem) {
+            console.log("Found existing cart item:", existingCartItem.toJSON());
+            // If the cart item already exists, update the quantity
+            existingCartItem.quantity += quantity;
+            await existingCartItem.save();
+            console.log("Updated existing cart item:", existingCartItem.toJSON());
+        } else {
+            // If the cart item doesn't exist, create a new one
+            const newCartItem = await CartItem.create({
+                product_id: product_id,
+                session_id: session_id,
+                quantity: quantity,
+            });
+            console.log("Created new cart item:", newCartItem.toJSON());
+        }
+
+        return res.status(200).send({ message: "Item added to the cart successfully." });
+    } catch (error) {
+        console.error("Error creating CartItem:", error);
+        return res.status(500).send({ message: error.message });
     }
 });
 

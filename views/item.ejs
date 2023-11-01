@@ -14,6 +14,7 @@
     <script defer src="../scripts/jquery.js"></script>
     <script defer src="../scripts/jqueryUI.js"></script>
     <script defer src="../scripts/main.js"></script>
+    <script defer src="../scripts/item.js"></script>
 </head>
 <body>
 <div class="body-block">
@@ -93,7 +94,7 @@
                     <h1><%= item.model %></h1>
                     <h4><%= item.design %></h4>
                     <p>Price: <%= item.price %> GBP</p>
-                    <p>ID: <%= item.id %></p>
+                    <p id="item_id" data-id="<%= item.id %>">ID: <%= item.id %></p>
                     <p>Description: <%= item.description %></p>
                     <hr>
                     <!-- Size Chart (You can use a dropdown, radio buttons, or any other method) -->
@@ -107,7 +108,7 @@
                     <!-- Quantity and Add to Cart button -->
                     <div class="d-flex align-items-center mb-3 quantity-selector">
                         <div class="input-group">
-                            <input type="number" class="form-control" value="1">
+                            <input type="number" id="quantity" class="form-control" value="1">
                         </div>
                         <button class="btn btn-primary ml-2">Add to Cart</button>
                     </div>

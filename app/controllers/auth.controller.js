@@ -2,6 +2,8 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
+const ShoppingSession = db.shopping_session;
+// const { ShoppingSession } = require('../models/shopping-session.model'); // Adjust the path as needed
 
 const Op = db.Sequelize.Op;
 
@@ -76,6 +78,33 @@ exports.signin = async (req, res) => {
         }
 
         req.session.token = token;
+        req.session.userId = user.id;
+
+        const shoppingSession = await ShoppingSession.findOne({
+            where: {
+                user_id: user.id,
+            },
+        });
+
+        // If a shopping session doesn't exist, create a new one
+        if (!shoppingSession) {
+            const createdShoppingSession = await ShoppingSession.create({
+                user_id: user.id,
+                total: 0, // Set the initial total value
+            });
+            req.session.sessionId = createdShoppingSession.id;
+        } else {
+            req.session.sessionId = shoppingSession.id;
+        }
+
+        // const shoppingSession = await ShoppingSession.create({
+        //     user_id: user.id,
+        //     total: 0, // Set the initial total value (you can adjust it based on your requirements)
+        // });
+        // console.log(shoppingSession)
+        // const SessionId = shoppingSession.id;
+        //
+        // req.session.sessionId = SessionId;
 
         return res.status(200).send({
             id: user.id,
