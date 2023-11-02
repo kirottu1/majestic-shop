@@ -116,6 +116,62 @@ app.post('/add-to-cart', async (req, res) => {
     }
 });
 
+app.get('/api/cart-items', (req, res) => {
+    // Ensure that the user is authenticated and that the session ID is available in req.session.sessionId
+    if (!req.session || !req.session.sessionId) {
+        return res.status(403).json({ message: 'Unauthorized' });
+    }
+
+    // Retrieve product IDs associated with the current shopping session
+    CartItem.findAll({
+        where: {
+            session_id: req.session.sessionId,
+        },
+        attributes: ['product_id', 'quantity'], // Retrieve only the 'product_id' attribute
+    })
+        .then((cartItems) => {
+            const productsData = cartItems.map((item) => {
+                return {
+                    product_id: item.product_id,
+                    quantity: item.quantity,
+                };
+            });
+            res.json({ productIds: productsData });
+            // const productIds = cartItems.map((item) => item.product_id);
+            // res.json({ productIds });
+        })
+        .catch((error) => {
+            console.error('Error retrieving cart items:', error);
+            res.status(500).json({ message: 'Internal Server Error' });
+        });
+});
+
+app.delete('/api/cart-items/:productId', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const session_id = req.session.sessionId;
+
+        // Find the cart item with the specified product_id and session_id
+        const cartItem = await CartItem.findOne({
+            where: {
+                product_id: productId,
+                session_id: session_id,
+            },
+        });
+
+        if (!cartItem) {
+            return res.status(404).json({ message: 'Cart item not found.' });
+        }
+
+        // Remove the cart item from the database
+        await cartItem.destroy();
+
+        return res.status(200).json({ message: 'Cart item removed successfully.' });
+    } catch (error) {
+        console.error('Error removing cart item:', error);
+        return res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
 
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);

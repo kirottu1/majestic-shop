@@ -55,8 +55,8 @@
       "model": "Nike Air Force",
       "brand": "Nike",
       "design": "Crypto Hasbulla",
-      "price": "100 GBP",
-      "id": "385",
+      "price": 100,
+      "id": 385,
       "link": "",
       "image": "./assets/shoe-catalogue/images/products/385/small/shoe.jpg"
     },

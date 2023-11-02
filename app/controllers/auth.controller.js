@@ -93,8 +93,10 @@ exports.signin = async (req, res) => {
                 total: 0, // Set the initial total value
             });
             req.session.sessionId = createdShoppingSession.id;
+            // localStorage.setItem('sessionId', createdShoppingSession.id);
         } else {
             req.session.sessionId = shoppingSession.id;
+            // localStorage.setItem('sessionId', shoppingSession.id);
         }
 
         // const shoppingSession = await ShoppingSession.create({
