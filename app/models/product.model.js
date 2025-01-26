@@ -23,15 +23,5 @@ module.exports = (sequelize, Sequelize) => {
         },
     });
 
-    // Product.associate = (models) => {
-    //     Product.hasMany(models.OrderItems, {
-    //         as: "order_items",
-    //     });
-    //     Product.belongsTo(models.Discount, {
-    //         foreignKey: "discount_id",
-    //         as: "discount",
-    //     });
-    // };
-
     return Product;
 };

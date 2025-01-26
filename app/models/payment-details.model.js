@@ -11,13 +11,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
         },
     });
-    //
-    // PaymentDetails.associate = (models) => {
-    //     PaymentDetails.belongsTo(models.OrderDetails, {
-    //         foreignKey: "id",
-    //         as: "order_details",
-    //     });
-    // };
+
 
     return PaymentDetails;
 };

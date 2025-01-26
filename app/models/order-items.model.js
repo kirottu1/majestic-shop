@@ -8,16 +8,5 @@ module.exports = (sequelize, Sequelize) => {
         },
     });
 
-    // OrderItems.associate = (models) => {
-    //     OrderItems.belongsTo(models.OrderDetails, {
-    //         foreignKey: "order_id",
-    //         as: "order_details",
-    //     });
-    //     OrderItems.belongsTo(models.Product, {
-    //         foreignKey: "product_id",
-    //         as: "product",
-    //     });
-    // };
-
     return OrderItems;
 };

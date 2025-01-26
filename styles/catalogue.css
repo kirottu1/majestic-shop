@@ -1,13 +1,11 @@
-/****** Bootstrap Colors ******/
 .primary {
     min-height: 800px;
 }
-/*** Accordion Toggles ***/
+
 .panel-heading {
     position: relative;
 }
-/*** Filter Menu ***/
-/* Panels */
+
 .filter-menu .panel {
     border-radius: 0;
     border: 1px solid #eeeeee;
@@ -19,7 +17,7 @@
 .filter-menu .panel-body {
     padding: 16px;
 }
-/* Inner Panels */
+
 .filter-menu .panel-group {
     margin: -16px;
 }
@@ -27,8 +25,7 @@
 .filter-menu .panel-group .panel + .panel {
     margin-top: 0;
 }
-/*** Filter Menu - Mobile ***/
-/* Panels - Mobile */
+
 .filter-menu.mobile .btn-link {
     color: #f9f9f9;
 }
@@ -47,7 +44,6 @@
 .filter-menu.mobile .panel-heading {
     background: #30404a;
 }
-
 .filter-menu.mobile .panel-group .panel {
     border-color: #4B6473;
 }
@@ -157,29 +153,27 @@
 }
 
 /*----------------------------------------------------------------*/
-
-/* Add these styles to your CSS */
 .product {
-    display: flex; /* Display as a flex container */
-    align-items: center; /* Center vertically */
+    display: flex;
+    align-items: center;
 }
 
 .product .product-image {
-    flex: 0 0 20%; /* Set a fixed width for the image */
+    flex: 0 0 20%;
 }
 
 .product .product-image img {
-    max-width: 100%; /* Make sure the image doesn't exceed the container */
-    height: auto; /* Maintain the image's aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 .product .product-details {
-    flex: 1; /* Take the remaining width */
+    flex: 1;
 }
 
-/* Optional: Add some spacing or other styles as needed */
+
 .product .product-details h3 {
-    margin-bottom: 5px; /* Add space below the heading */
+    margin-bottom: 5px;
 }
 .product td:nth-child(1){
     display: flex;

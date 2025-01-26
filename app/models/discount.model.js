@@ -11,11 +11,5 @@ module.exports = (sequelize, Sequelize) => {
         },
     });
 
-    // Discount.associate = (models) => {
-    //     Discount.hasMany(models.Product, {
-    //         as: "products",
-    //     });
-    // };
-
     return Discount;
 };

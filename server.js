@@ -7,16 +7,12 @@ const app = express();
 
 app.use(cors());
 
-// parse requests of content-type - application/json
 app.use(express.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
 
 app.use(
     cookieSession({
-        name: "kirottu-session",
-        keys: ["COOKIE_SECRET"], // should use as secret environment variable
+        name: "Cyril-coursework",
+        keys: ["COOKIE_SECRET"],
         httpOnly: true,
     })
 );
@@ -52,35 +48,29 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname)));
 
-// simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to kirottu application." });
-});
-
 app.get('/item/:id', async (req, res) => {
     try {
-        const itemId = req.params.id; // Get the item ID from the URL
+        const itemId = req.params.id;
         console.log(itemId)
-        // Make an HTTP GET request to fetch item data based on the itemId
+
         const response = await axios.get(`http://localhost:3000/stock?id=${itemId}`);
-        // Extract the item data from the response
+
         const item = response.data[0];
-        //
+
         console.log(item)
         console.log(item.id)
-        // // Render the item.ejs view and pass the itemData to it
+
         res.render('item', { item });
     } catch (error) {
-        // Handle any errors here
         console.error('Error fetching item data:', error);
-        // You can also render an error page or redirect as needed
+
         res.status(500).send('Internal Server Error');
     }
 });
 
 app.post('/add-to-cart', async (req, res) => {
     const { product_id, quantity } = req.body;
-    const session_id = req.session.sessionId; // Get the session ID from the user's session
+    const session_id = req.session.sessionId;
     console.log("Received request to add item to cart");
     console.log("Product ID:", product_id);
     console.log("Quantity:", quantity);
@@ -95,12 +85,10 @@ app.post('/add-to-cart', async (req, res) => {
 
         if (existingCartItem) {
             console.log("Found existing cart item:", existingCartItem.toJSON());
-            // If the cart item already exists, update the quantity
             existingCartItem.quantity += quantity;
             await existingCartItem.save();
             console.log("Updated existing cart item:", existingCartItem.toJSON());
         } else {
-            // If the cart item doesn't exist, create a new one
             const newCartItem = await CartItem.create({
                 product_id: product_id,
                 session_id: session_id,
@@ -117,17 +105,15 @@ app.post('/add-to-cart', async (req, res) => {
 });
 
 app.get('/api/cart-items', (req, res) => {
-    // Ensure that the user is authenticated and that the session ID is available in req.session.sessionId
     if (!req.session || !req.session.sessionId) {
         return res.status(403).json({ message: 'Unauthorized' });
     }
 
-    // Retrieve product IDs associated with the current shopping session
     CartItem.findAll({
         where: {
             session_id: req.session.sessionId,
         },
-        attributes: ['product_id', 'quantity'], // Retrieve only the 'product_id' attribute
+        attributes: ['product_id', 'quantity'],
     })
         .then((cartItems) => {
             const productsData = cartItems.map((item) => {
@@ -137,8 +123,7 @@ app.get('/api/cart-items', (req, res) => {
                 };
             });
             res.json({ productIds: productsData });
-            // const productIds = cartItems.map((item) => item.product_id);
-            // res.json({ productIds });
+
         })
         .catch((error) => {
             console.error('Error retrieving cart items:', error);
@@ -151,7 +136,6 @@ app.delete('/api/cart-items/:productId', async (req, res) => {
         const productId = req.params.productId;
         const session_id = req.session.sessionId;
 
-        // Find the cart item with the specified product_id and session_id
         const cartItem = await CartItem.findOne({
             where: {
                 product_id: productId,
@@ -163,7 +147,6 @@ app.delete('/api/cart-items/:productId', async (req, res) => {
             return res.status(404).json({ message: 'Cart item not found.' });
         }
 
-        // Remove the cart item from the database
         await cartItem.destroy();
 
         return res.status(200).json({ message: 'Cart item removed successfully.' });

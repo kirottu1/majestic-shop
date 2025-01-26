@@ -130,24 +130,19 @@
   </section>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Function to retrieve product IDs for the shopping session
+
       function retrieveProductIds() {
         fetch('/api/cart-items')
                 .then((response) => response.json())
                 .then((data) => {
-                  // Handle the product IDs data
                   const productIds = data.productIds;
                   console.log('Product IDs:', productIds);
-
-                  // You can use the retrieved product IDs to update the cart HTML on your page
-                  // Implement logic to display products based on product IDs
                 })
                 .catch((error) => {
                   console.error('Error fetching product IDs:', error);
                 });
       }
 
-      // Call the function to retrieve product IDs when the page loads
       retrieveProductIds();
     });
   </script>

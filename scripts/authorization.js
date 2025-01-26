@@ -14,6 +14,5 @@ function onRegBtnClick(){
     })
     .catch(error => {
         console.error('Registration error:', error);
-        // Handle errors here
     });
 }

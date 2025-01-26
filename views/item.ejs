@@ -79,7 +79,6 @@
     <section class="main-page-description justify-content-between">
         <div class="container">
             <div class="row">
-                <!-- Left Part - 60% for images -->
                 <div class="col-md-7 image-grid">
                     <div class="row">
                         <% for (let i = 1; i <= 4; i++) { %>
@@ -89,7 +88,6 @@
                         <% } %>
                     </div>
                 </div>
-                <!-- Right Part - 40% for details -->
                 <div class="col-md-5">
                     <h1><%= item.model %></h1>
                     <h4><%= item.design %></h4>
@@ -97,7 +95,6 @@
                     <p id="item_id" data-id="<%= item.id %>">ID: <%= item.id %></p>
                     <p>Description: <%= item.description %></p>
                     <hr>
-                    <!-- Size Chart (You can use a dropdown, radio buttons, or any other method) -->
                     <label for="size">Select Size:</label>
                     <select class="form-control mb-3" id="size">
                         <% const sizes = ["Size 7", "Size 8", "Size 9"]; %>
@@ -105,7 +102,6 @@
                             <option><%= size %></option>
                         <% }); %>
                     </select>
-                    <!-- Quantity and Add to Cart button -->
                     <div class="d-flex align-items-center mb-3 quantity-selector">
                         <div class="input-group">
                             <input type="number" id="quantity" class="form-control" value="1">

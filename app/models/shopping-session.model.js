@@ -8,15 +8,5 @@ module.exports = (sequelize, Sequelize) => {
         },
     });
 
-    // ShoppingSession.associate = (models) => {
-    //     ShoppingSession.belongsTo(models.User, {
-    //         foreignKey: "user_id",
-    //         as: "user",
-    //     });
-    //     ShoppingSession.hasMany(models.CartItem, {
-    //         as: "cart_items",
-    //     });
-    // };
-
     return ShoppingSession;
 };

@@ -1,9 +1,3 @@
-// function addProductToCart() {
-//     const product = $(".product").clone();
-//     $(".cart tbody").append(product);
-// }
-
-// Update the subtotal for a product
 function updateSubtotal(product) {
     const price = parseFloat(product.find(".product-details p").text().replace("$", ""));
     const quantity = parseInt(product.find(".quantity").val());
@@ -11,7 +5,6 @@ function updateSubtotal(product) {
     product.find(".subtotal").text("$" + subtotal);
 }
 
-// Calculate and update the total price
 function updateTotal() {
     let total = 0;
     $(".product").each(function () {
@@ -23,19 +16,16 @@ function updateTotal() {
     $("#total").text("$" + total);
 }
 
-// Remove a product from the cart
 function removeProduct(product) {
     product.remove();
     updateTotal();
 }
 
-// Delegation for removing products
 $(".cart").on("click", ".remove", function () {
     const product = $(this).closest(".product");
     removeProduct(product);
 });
 
-// Delegation for changing quantity
 $(".cart").on("change", ".quantity", function () {
     const product = $(this).closest(".product");
     updateSubtotal(product);
@@ -61,38 +51,31 @@ fetch('/api/cart-items', {
         if (response.status === 200) {
             return response.json();
         } else if (response.status === 403) {
-            // Handle unauthorized access
             console.error('Unauthorized');
         } else {
-            // Handle other errors
             console.error('Error:', response.status);
         }
     })
     .then((data) => {
-        // Handle the response data (pairs of product IDs and quantities)
         console.log('Cart Items:', data);
 
-        // Iterate through product IDs and populate your cart
         data.productIds.forEach(async (productData) => {
             const productId = productData.product_id;
             const quantity = productData.quantity;
 
             try {
-                // Fetch product data from db.json using productId
                 const response = await fetch(`../employees-server/db.json`);
                 const productsData = await response.json();
                 const products = productsData.stock;
 
-                // Find the product with the given ID
                 const product = products.find((item) => item.id === productId);
 
                 if (product) {
-                    // Create a copy of your cart item template
                     const productTemplate = $("#product").clone();
                     productTemplate.removeAttr("id"); // Remove the id
                     productTemplate.addClass("product");
                     productTemplate.css('display', 'table-row')
-                    // Update the template with product data
+
                     productTemplate.html(productTemplate.html()
                         .replace(/{{id}}/g, product.id)
                         .replace(/{{image}}/g, product.image)

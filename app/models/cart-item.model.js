@@ -11,12 +11,5 @@ module.exports = (sequelize, Sequelize) => {
         },
     });
 
-    // CartItem.associate = (models) => {
-    //     CartItem.belongsTo(models.Product, {
-    //         foreignKey: "product_id",
-    //         as: "product",
-    //     });
-    // };
-
     return CartItem;
 };
